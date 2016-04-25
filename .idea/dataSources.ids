@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="SQLite -" uuid="0ee141ad-9abf-4da3-a499-3c7fb9c1faa2">
+    <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="T_BranchSource" schema="" catalog="" type="TABLE">
+      <column name="BranchSourceID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="BranchID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="SourceID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="CompanyName" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Username" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="PasswordSet" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="CreateDate" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="UpdateDate" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="branchsourceid"/>
+      <index name="T_BranchSource_PK" unique="true" columns="BranchSourceID"/>
+    </table>
+    <table name="T_PositionInfo" schema="" catalog="" type="TABLE">
+      <column name="PositionID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="PositionName" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="HiringNumber" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="Location" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="WorkingTime" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Degree" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Sex" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Language" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="LanguageLevel" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="AgeFrom" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="AgeTo" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="Experience" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="Category" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Major" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Salary" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="PositionDesc" sqlType="VARCHAR(2000)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="EndDate" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Source" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="sourcepositionID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Status" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="BranchID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="ReportTo" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="ManageCount" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Department" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="SourceURL" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="CreateDate" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="UpdateDate" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="positionid"/>
+      <index name="T_PositionInfo_PK" unique="true" columns="PositionID"/>
+    </table>
+    <table name="T_PositionResume" schema="" catalog="" type="TABLE">
+      <column name="ID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="PositionID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="ResumeID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="CreateDate" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="UpdateDate" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <index name="T_PositionResume_PK" unique="true" columns="ID"/>
+    </table>
+    <table name="T_ResumeInfo" schema="" catalog="" type="TABLE">
+      <column name="resumeID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="cname" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="ename" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="sex" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Residence" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="IDtype" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="IDNumber" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="birthdate" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="marital" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="phoneNumber" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="mobile" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="qqNumber" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="partisan" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="hukou" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="address" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="degree" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="WorkingStart" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="currentSalary" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="jobStatus" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="overseaExp" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="overseadesc" sqlType="VARCHAR(500)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="avaliableTime" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="jobTime" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="expectIndustry" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="expectSalary" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="category" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="eduinfo" sqlType="VARCHAR(2000)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="traininginfo" sqlType="VARCHAR(2000)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="workexpinfo" sqlType="VARCHAR(2000)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="projectexpinfo" sqlType="VARCHAR(2000)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="EnglishLevel" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Japaneselevel" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="selfEvaluation" sqlType="VARCHAR(500)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="skill" sqlType="VARCHAR(500)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="postTime" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Source" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="sourceresumeID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="sourceurl" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Status" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="CreateDate" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="UpdateDate" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="resumeid"/>
+      <index name="T_ResumeInfo_PK" unique="true" columns="resumeID"/>
+    </table>
+    <table name="T_SourceSiteInfo" schema="" catalog="" type="TABLE">
+      <column name="SourceID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="Code" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="Name" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="CreateDate" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="UpdateDate" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="sourceid"/>
+      <index name="T_SourceSiteInfo_PK" unique="true" columns="SourceID"/>
+    </table>
+    <table name="T_branchInfo" schema="" catalog="" type="TABLE">
+      <column name="BranchID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="cname" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="ename" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="CreateDate" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="UpdateDate" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="branchid"/>
+      <index name="T_branchInfo_PK" unique="true" columns="BranchID"/>
+    </table>
+    <table name="T_userInfo" schema="" catalog="" type="TABLE">
+      <column name="UserID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="LoginName" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="Username" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="PasswordSet" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="BranchID" sqlType="VARCHAR(50)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="IsAdmin" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="IsEnabled" sqlType="VARCHAR(10)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="CreateDate" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="UpdateDate" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="userid"/>
+      <index name="T_userInfo_PK" unique="true" columns="UserID"/>
+    </table>
+  </data-source>
+</component>

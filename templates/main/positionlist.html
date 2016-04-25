@@ -1,0 +1,116 @@
+{% extends "layout/layout.html" %}
+{% block head_css %}
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='plugins/datatables/dataTables.bootstrap.css') }}">
+{% endblock %}
+{% block head_js %}
+{% endblock %}
+
+{% block body_content %}
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                职位信息
+                {#                <small>Optional description</small>#}
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="{{ url_for('main.index') }}"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li class="active">职位信息</li>
+            </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <!-- Your Page Content Here -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        {#                        <div class="box-header">#}
+                        {#                            <h3 class="box-title">职位列表</h3>#}
+                        {#                        </div>#}
+                        {#                        <!-- /.box-header -->#}
+                        <div class="box-body">
+                            <table id="positionlist" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>职位名称</th>
+                                    <th>工作地点</th>
+                                    <th>工作性质</th>
+                                    <th>截止日期</th>
+                                    <th>招聘人数</th>
+                                    <th>来源网站</th>
+                                    <th>职位ID</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+{% endblock %}
+
+{% block body_js %}
+    <!-- DataTables -->
+    <script src="{{ url_for('static',filename='plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#positionlist").dataTable({
+                autoWidth: false,
+                bLengthChange: false,
+                processing: true,
+                searching: false,
+                serverSide: true,
+                pageLength: {{ pagenum }},
+                pagingType: "full_numbers",
+                ordering: false,
+                ajax: {
+                    type: "post",
+                    url: "{{ url_for('main.getpositionlist') }}",
+                    dataSrc: "data"
+                },
+                language: {
+                    "url": "{{ url_for('static',filename='plugins/datatables/i18n.json')}}"
+                },
+                columns: [
+                    {data: "positionname"},
+                    {data: "location"},
+                    {data: "workingtime"},
+                    {data: "enddate"},
+                    {data: "hiringnumber"},
+                    {data: "source"},
+                    {data: "positionID"}
+                ],
+                "columnDefs": [
+                    {
+                        // The `data` parameter refers to the data for the cell (defined by the
+                        // `data` option, which defaults to the column being worked with, in
+                        // this case `data: 0`.
+                        "render": function (data, type, row)
+                        {
+                            var link_url = "{{ url_for('main.index') }}";
+                            return '<a href="'+link_url+'?pid='+row.positionID+'">'+data+'<//a>'
+                        },
+                        "targets": 0
+                    },
+                    {
+                        "render": function (data, type, row)
+                        {
+                            var link_url = "{{ url_for('main.resume') }}";
+                            return '<a href="'+link_url+row.positionID+'">简历<//a>'
+                        },
+                        "targets": 7
+                    },
+                    {"visible": false, "targets": [6]}
+                ]
+            });
+        });
+    </script>
+{% endblock %}
